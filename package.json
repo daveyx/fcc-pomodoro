@@ -1,0 +1,25 @@
+{
+  "name": "fcc-pomodoro",
+  "version": "1.0.0",
+  "description": "Free Code Camp - Pomodoro Clock",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daveyx/fcc-pomodoro.git"
+  },
+  "author": "daveyx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daveyx/fcc-pomodoro/issues"
+  },
+  "homepage": "https://github.com/daveyx/fcc-pomodoro#readme",
+  "dependencies": {
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
