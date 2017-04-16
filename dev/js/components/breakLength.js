@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
+import {Row, Col} from 'react-bootstrap';
 import Pomodoro from './pomodoro'
 
 export default class BreakLength extends Component {
@@ -11,7 +12,26 @@ export default class BreakLength extends Component {
   render() {
     return(
       <div>
-        breaklength
+        <Row>
+          <Col xs={12}>
+            Length of break
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={2} xsOffset={2}>
+            <div>
+              -
+            </div>
+          </Col>
+          <Col xs={3}>
+            X
+          </Col>
+          <Col xs={2}>
+            <div>
+              +
+            </div>
+          </Col>
+        </Row>
       </div>
     );
   }
