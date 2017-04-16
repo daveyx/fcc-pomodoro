@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devServer: {
@@ -12,14 +12,14 @@ module.exports = {
   entry: './dev/js/index.js',
   module: {
     loaders: [
-      // {
-      //   test: /\.js$/,
-      //   loaders: ['babel-loader'],
-      //   exclude: /node_modules/
-      // }, {
-      //   test: /\.css/,
-      //   loader: ExtractTextPlugin.extract("css-loader")
-      // }
+      {
+        test: /\.js$/,
+        loaders: ['babel-loader'],
+        exclude: /node_modules/
+      }, {
+        test: /\.css/,
+        loader: ExtractTextPlugin.extract("css-loader")
+      }
     ]
   },
   output: {
@@ -28,6 +28,6 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    // new ExtractTextPlugin("css/styles.css")
+    new ExtractTextPlugin("css/styles.css")
   ]
 };
