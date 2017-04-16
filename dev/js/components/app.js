@@ -1,39 +1,41 @@
 'use strict';
 
 import React, {Component} from 'react';
+import {Grid, Row, Col} from 'react-bootstrap';
+import Pomodoro from './pomodoro'
 
 export default class App extends Component {
   constructor(props) {
     super();
-    this.state = {
-      currentCount: 10
-    };
-    this.timer = this.timer.bind(this)
-  }
-
-  componentDidMount() {
-    var intervalId = setInterval(this.timer, 1000);
-    this.setState({intervalId: intervalId});
-    console.log("intervalId ", intervalId);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.state.intervalId);
-  }
-
-  timer() {
-    let newCount = this.state.currentCount -1;
-    this.setState({ currentCount: newCount });
-    if (newCount <= 0) {
-      clearInterval(this.state.intervalId);
-    }
-    console.log(this.state.currentCount);
   }
 
   render() {
     return(
       <div className="wrapper">
-        {this.state.currentCount}
+        <Grid className="content app">
+          <Row>
+            <Col xs={10} xsOffset={1}>
+              <h1 className="text-center">
+                Free Code Camp - Pomodoro<br />
+                <small>by <a href="http://www.daveyx.ga" target="_blank" title="daveyx">daveyx</a></small>
+              </h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={4}>
+              <Pomodoro />
+            </Col>
+            </Row>
+            <Row>
+              <Col xs={12}>
+                <hr />
+                <footer className="text-center">
+                  Sourcecode at github.com: <a href="https://github.com/daveyx/fcc-pomodoro" title="Sourcecode" target="_blank">click</a><br />
+                Demo at github.com: <a href="https://daveyx.github.io/fcc-pomodoro/" title="Demo" target="_blank">click</a>
+                </footer>
+              </Col>
+            </Row>
+        </Grid>
       </div>
     );
   }
