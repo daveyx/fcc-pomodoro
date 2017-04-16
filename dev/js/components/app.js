@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
+import '../../css/styles.css';
 import Pomodoro from './pomodoro'
 
 export default class App extends Component {
@@ -15,8 +16,15 @@ export default class App extends Component {
         <Grid className="content app">
           <Row>
             <Col xs={10} xsOffset={1}>
+              <p className="text-center">
+                Free Code Camp
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={10} xsOffset={1}>
               <h1 className="text-center">
-                Free Code Camp - Pomodoro<br />
+                Pomodoro<br />
                 <small>by <a href="http://www.daveyx.ga" target="_blank" title="daveyx">daveyx</a></small>
               </h1>
             </Col>
