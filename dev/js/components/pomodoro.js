@@ -1,6 +1,9 @@
 'use strict';
 
 import React, {Component} from 'react';
+import {Row, Col} from 'react-bootstrap';
+import BreakLength from './breakLength';
+import SessionLength from './sessionLength';
 
 export default class Pomodoro extends Component {
   constructor(props) {
@@ -32,8 +35,20 @@ export default class Pomodoro extends Component {
 
   render() {
     return(
-      <div className="wrapper">
-        {this.state.currentCount}
+      <div className="wrapper text-center">
+        <Row>
+          <Col xs={2} xsOffset={3}>
+            <BreakLength />
+          </Col>
+          <Col xs={2} xsOffset={2}>
+            <SessionLength />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6} xsOffset={3}>
+            {this.state.currentCount}
+          </Col>
+        </Row>
       </div>
     );
   }
