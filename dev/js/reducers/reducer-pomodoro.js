@@ -7,7 +7,7 @@ const initialState = {
   currentSecond: "00",
   isSessionRunning: true,
   isBreakRunning: false,
-  userInfo: ""
+  userInfo: "Session"
 }
 
 export default (state=initialState, action) => {
@@ -26,7 +26,8 @@ function decrementTimer(state) {
         currentMinute: state.breakLength - 1,
         currentSecond: 59,
         isSessionRunning: false,
-        isBreakRunning: true
+        isBreakRunning: true,
+        userInfo: "Break"
       });
     }
     if (state.isBreakRunning) {
@@ -34,7 +35,8 @@ function decrementTimer(state) {
         currentMinute: state.sessionLength - 1,
         currentSecond: 59,
         isSessionRunning: false,
-        isBreakRunning: true
+        isBreakRunning: true,
+        userInfo: "Session"
       });
     }
   }

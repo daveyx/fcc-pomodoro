@@ -41,7 +41,7 @@ class PomodoroContainer extends React.Component {
 
   render() {
     return(
-      <Pomodoro minute={this.props.minute} second={this.props.second} />
+      <Pomodoro minute={this.props.minute} second={this.props.second} userInfo={this.props.userInfo} />
     );
   }
 }
@@ -51,7 +51,8 @@ function mapStatesToProps(state) {
     minute: state.pomodoroState.currentMinute,
     second: state.pomodoroState.currentSecond,
     isSessionRunning: state.pomodoroState.isSessionRunning,
-    isBreakRunning: state.pomodoroState.isBreakRunning
+    isBreakRunning: state.pomodoroState.isBreakRunning,
+    userInfo: state.pomodoroState.userInfo
   }
 }
 
