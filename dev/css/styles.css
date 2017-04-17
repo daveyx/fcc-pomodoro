@@ -43,4 +43,8 @@ h1 {
   width: 40%;
   margin-right: 5px;
   margin-left: 5px;
+  cursor: pointer;
 }
+.cursor-pointer {
+   cursor: pointer
+ }

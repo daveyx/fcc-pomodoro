@@ -19,13 +19,13 @@ export default class BreakLength extends Component {
         </Row>
         <Row>
           <Col xs={12}>
-            <div className="width-33" onClick={this.props.decrementBreak}>
+            <div className="width-33 cursor-pointer" onClick={this.props.decrementBreak}>
               -
             </div>
             <div className="width-33">
               {this.props.breakLength}
             </div>
-            <div className="width-33" onClick={this.props.incrementBreak}>
+            <div className="width-33 cursor-pointer" onClick={this.props.incrementBreak}>
               +
             </div>
           </Col>
