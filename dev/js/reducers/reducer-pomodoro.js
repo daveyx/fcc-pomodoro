@@ -17,9 +17,7 @@ export default (state=initialState, action) => {
       return decrementTimer(state);
       break;
     case "START_POMODORO":
-      return Object.assign({}, state, {
-        isSessionRunning: true
-      });
+      return {...state, isSessionRunning: true};
       break;
     case "PAUSE_POMODORO":
       return Object.assign({}, state, {
