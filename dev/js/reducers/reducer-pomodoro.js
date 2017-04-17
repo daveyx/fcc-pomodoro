@@ -32,6 +32,14 @@ export default (state=initialState, action) => {
       });
       break;
     case "RESET_POMODORO":
+      return Object.assign({}, state, {
+        isPaused: false,
+        isSessionRunning: false,
+        isBreakRunning: false,
+        userInfo: "Session",
+        currentMinute: "" + state.sessionLength,
+        currentSecond: "00"
+      });
       break;
   }
   return state;

@@ -8,7 +8,8 @@ import {
   decrementTimerAction,
   startPomodoroAction,
   pausePomodoroAction,
-  resumePomodoroAction
+  resumePomodoroAction,
+  resetPomodoroAction
 } from '../actions/index';
 
 class PomodoroContainer extends React.Component {
@@ -28,9 +29,10 @@ class PomodoroContainer extends React.Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    if ( ! this.props.isPaused && nextProps.isPaused) {
+    if (( ! this.props.isPaused && nextProps.isPaused) ||
+      ( ! nextProps.isSessionRunning && ! nextProps.isBreakRunning)) {
       this.stopTimer();
-    } else if ( this.props.isPaused && ! nextProps.isPaused) {
+    } else if (this.props.isPaused && ! nextProps.isPaused) {
       this.startTimer();
     }
     if (this.props.isSessionRunning !== nextProps.isSessionRunning) {
@@ -62,6 +64,7 @@ class PomodoroContainer extends React.Component {
         startClickHandler={this.props.startPomodoro}
         pauseClickHandler={this.props.pausePomodoro}
         resumeClickHandler={this.props.resumePomodoro}
+        resetClickHandler={this.props.resetPomodoro}
         isSessionRunning={this.props.isSessionRunning}
         isBreakRunning={this.props.isBreakRunning}
         isPaused={this.props.isPaused} />
@@ -85,7 +88,8 @@ function matchDispatchToProps(dispatch) {
     decrementTimer: decrementTimerAction,
     startPomodoro: startPomodoroAction,
     pausePomodoro: pausePomodoroAction,
-    resumePomodoro: resumePomodoroAction
+    resumePomodoro: resumePomodoroAction,
+    resetPomodoro: resetPomodoroAction
   }, dispatch)
 }
 

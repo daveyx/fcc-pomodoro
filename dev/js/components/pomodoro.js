@@ -40,7 +40,7 @@ export default class Pomodoro extends Component {
   }
 
   getButton2Text() {
-    if ( this.props.isSessionRunning || this.props.isBreakRunning) {
+    if (this.props.isSessionRunning || this.props.isBreakRunning) {
       return "Reset";
     }
   }
@@ -71,7 +71,7 @@ export default class Pomodoro extends Component {
             <div className="buttons">
               <div className="button" onClick={button1Config.handler}>{button1Config.text}</div>
               {button2Text ?
-                <div className="button" onClick={this.props.startClickHandler}>{button2Text}</div>
+                <div className="button" onClick={this.props.resetClickHandler}>{button2Text}</div>
                 : null}
             </div>
           </Col>
