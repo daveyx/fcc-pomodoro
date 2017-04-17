@@ -29,7 +29,7 @@ export default class Pomodoro extends Component {
     if (newCount <= 0) {
       clearInterval(this.state.intervalId);
     }
-    console.log(this.state.currentCount);
+    //console.log(this.state.currentCount);
   }
 
   render() {
