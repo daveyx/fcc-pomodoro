@@ -7,6 +7,7 @@ const initialState = {
   currentSecond: "00",
   isSessionRunning: false,
   isBreakRunning: false,
+  isPaused: false,
   userInfo: "Session"
 }
 
@@ -19,6 +20,12 @@ export default (state=initialState, action) => {
       return Object.assign({}, state, {
         isSessionRunning: true
       });
+      break;
+    case "PAUSE_POMODORO":
+      break;
+    case "RESUME_POMODORO":
+      break;
+    case "RESET_POMODORO":
       break;
   }
   return state;
