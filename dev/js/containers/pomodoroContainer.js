@@ -31,7 +31,7 @@ class PomodoroContainer extends React.Component {
   }
 
   startTimer() {
-    var intervalId = setInterval(this.runTimer, 1000);
+    var intervalId = setInterval(this.runTimer, 100);
     this.setState({intervalId: intervalId});
   }
 
