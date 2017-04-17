@@ -41,6 +41,26 @@ export default (state=initialState, action) => {
         currentSecond: "00"
       });
       break;
+    case "INCREMENT_SESSION":
+      return Object.assign({}, state, {
+        sessionLength: state.sessionLength + 1
+      });
+      break;
+    case "DECREMENT_SESSION":
+      return Object.assign({}, state, {
+        sessionLength: state.sessionLength <= 1 ? 1 : state.sessionLength - 1
+      });
+      break;
+    case "INCREMENT_BREAK":
+      return Object.assign({}, state, {
+        breakLength: state.breakLength + 1
+      });
+      break;
+    case "DECREMENT_BREAK":
+      return Object.assign({}, state, {
+        breakLength: state.breakLength <= 1 ? 1 : state.breakLength - 1
+      });
+      break;
   }
   return state;
 }

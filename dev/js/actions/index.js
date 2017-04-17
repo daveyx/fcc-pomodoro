@@ -23,3 +23,23 @@ export const resetPomodoroAction = () => {
     type: "RESET_POMODORO"
   }
 };
+export const incrementSessionAction = () => {
+  return {
+    type: "INCREMENT_SESSION"
+  }
+};
+export const decrementSessionAction = () => {
+  return {
+    type: "DECREMENT_SESSION"
+  }
+};
+export const incrementBreakAction = () => {
+  return {
+    type: "INCREMENT_BREAK"
+  }
+};
+export const decrementBreakAction = () => {
+  return {
+    type: "DECREMENT_BREAK"
+  }
+};
