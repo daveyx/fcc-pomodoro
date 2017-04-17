@@ -2,9 +2,15 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import Pomodoro from '../components/pomodoro'
+import {bindActionCreators} from 'redux';
+import Pomodoro from '../components/pomodoro';
+import {decrementTimerAction} from '../actions/index';
 
 class PomodoroContainer extends React.Component {
+  constructor(props) {
+    super();
+    this.runTimer = this.runTimer.bind(this)
+  }
 
   componentDidMount() {
     if (this.props.isSessionRunning) {
@@ -30,12 +36,7 @@ class PomodoroContainer extends React.Component {
   }
 
   runTimer() {
-    // let newCount = this.state.currentCount -1;
-    // this.setState({ currentCount: newCount });
-    // if (newCount <= 0) {
-    //   clearInterval(this.state.intervalId);
-    // }
-    // console.log(this.state.currentCount);
+    this.props.decrementTimer();
   }
 
   render() {
@@ -54,4 +55,10 @@ function mapStatesToProps(state) {
   }
 }
 
-export default connect(mapStatesToProps)(PomodoroContainer);
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    decrementTimer: decrementTimerAction
+  }, dispatch)
+}
+
+export default connect(mapStatesToProps, matchDispatchToProps)(PomodoroContainer);
