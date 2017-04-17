@@ -45,8 +45,10 @@ export default class Pomodoro extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={6} xsOffset={3}>
-            {this.state.currentCount}
+          <Col xs={8} xsOffset={2}>
+            <div className="session">
+              {this.state.currentCount}
+            </div>
           </Col>
         </Row>
       </div>
