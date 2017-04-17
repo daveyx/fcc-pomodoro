@@ -31,6 +31,10 @@ export default class Pomodoro extends Component {
                 {this.props.minute}:{this.props.second}
               </p>
             </div>
+            <div className="buttons">
+              <div className="button" onClick={this.props.startClickHandler}>Start</div>
+              <div className="button" onClick={this.props.startClickHandler}>Start</div>
+            </div>
           </Col>
         </Row>
       </div>

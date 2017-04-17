@@ -5,7 +5,7 @@ const initialState = {
   breakLength: 1,
   currentMinute: "1",
   currentSecond: "00",
-  isSessionRunning: true,
+  isSessionRunning: false,
   isBreakRunning: false,
   userInfo: "Session"
 }
@@ -14,6 +14,11 @@ export default (state=initialState, action) => {
   switch(action.type) {
     case "DECREMENT_TIMER":
       return decrementTimer(state);
+      break;
+    case "START_POMODORO":
+      return Object.assign({}, state, {
+        isSessionRunning: true
+      });
       break;
   }
   return state;

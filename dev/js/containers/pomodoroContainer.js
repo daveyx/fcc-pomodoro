@@ -4,7 +4,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Pomodoro from '../components/pomodoro';
-import {decrementTimerAction} from '../actions/index';
+import {decrementTimerAction, startPomodoroAction} from '../actions/index';
 
 class PomodoroContainer extends React.Component {
   constructor(props) {
@@ -22,8 +22,12 @@ class PomodoroContainer extends React.Component {
     this.stopTimer();
   }
 
-  componentDidUpdate(nextProps) {
-
+  componentWillUpdate(nextProps, nextState) {
+    if (this.props.isSessionRunning !== nextProps.isSessionRunning) {
+      if (nextProps.isSessionRunning ) {
+        this.startTimer();
+      }
+    }
   }
 
   stopTimer() {
@@ -31,7 +35,7 @@ class PomodoroContainer extends React.Component {
   }
 
   startTimer() {
-    var intervalId = setInterval(this.runTimer, 100);
+    var intervalId = setInterval(this.runTimer, 300);
     this.setState({intervalId: intervalId});
   }
 
@@ -41,7 +45,11 @@ class PomodoroContainer extends React.Component {
 
   render() {
     return(
-      <Pomodoro minute={this.props.minute} second={this.props.second} userInfo={this.props.userInfo} />
+      <Pomodoro
+        minute={this.props.minute}
+        second={this.props.second}
+        userInfo={this.props.userInfo}
+        startClickHandler={this.props.startPomodoro} />
     );
   }
 }
@@ -58,7 +66,8 @@ function mapStatesToProps(state) {
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-    decrementTimer: decrementTimerAction
+    decrementTimer: decrementTimerAction,
+    startPomodoro: startPomodoroAction
   }, dispatch)
 }
 
