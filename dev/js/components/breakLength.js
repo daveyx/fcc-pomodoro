@@ -24,7 +24,7 @@ export default class BreakLength extends Component {
             </div>
           </Col>
           <Col xs={3}>
-            X
+            {this.props.breakLength}
           </Col>
           <Col xs={2}>
             <div>

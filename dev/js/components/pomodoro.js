@@ -2,7 +2,8 @@
 
 import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
-import BreakLength from './breakLength';
+import BreakLengthContainer from '../containers/breakLengthContainer';
+// import SessionLengthContainer from '../containers/sessionLengthContainer';
 import SessionLength from './sessionLength';
 
 export default class Pomodoro extends Component {
@@ -37,7 +38,7 @@ export default class Pomodoro extends Component {
       <div className="wrapper text-center">
         <Row>
           <Col xs={6} xsOffset={0}>
-            <BreakLength />
+            <BreakLengthContainer />
           </Col>
           <Col xs={6} xsOffset={0}>
             <SessionLength />
