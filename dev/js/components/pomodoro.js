@@ -17,7 +17,6 @@ export default class Pomodoro extends Component {
   componentDidMount() {
     var intervalId = setInterval(this.timer, 1000);
     this.setState({intervalId: intervalId});
-    console.log("intervalId ", intervalId);
   }
 
   componentWillUnmount() {
@@ -47,6 +46,7 @@ export default class Pomodoro extends Component {
         <Row>
           <Col xs={8} xsOffset={2}>
             <div className="session">
+              {this.props.minute} : {this.props.second}<br />
               {this.state.currentCount}
             </div>
           </Col>
