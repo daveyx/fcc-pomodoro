@@ -37,15 +37,15 @@ export default class Pomodoro extends Component {
     return(
       <div className="wrapper text-center">
         <Row>
-          <Col xs={4} xsOffset={2}>
+          <Col xs={6} xsOffset={0}>
             <BreakLength />
           </Col>
-          <Col xs={4} xsOffset={1}>
+          <Col xs={6} xsOffset={0}>
             <SessionLength />
           </Col>
         </Row>
         <Row>
-          <Col xs={2} xsOffset={5}>
+          <Col xs={6} xsOffset={3}>
             {this.state.currentCount}
           </Col>
         </Row>

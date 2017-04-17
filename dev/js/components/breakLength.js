@@ -11,7 +11,7 @@ export default class BreakLength extends Component {
 
   render() {
     return(
-      <div>
+      <div className="text-center">
         <Row>
           <Col xs={12}>
             Length of break

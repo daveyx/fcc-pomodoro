@@ -18,7 +18,7 @@ export default class SessionLength extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={2} xsOffset={2}>
+          <Col xs={2} xsOffset={3}>
             <div>
               -
             </div>
