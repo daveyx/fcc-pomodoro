@@ -49,7 +49,9 @@ class PomodoroContainer extends React.Component {
         minute={this.props.minute}
         second={this.props.second}
         userInfo={this.props.userInfo}
-        startClickHandler={this.props.startPomodoro} />
+        startClickHandler={this.props.startPomodoro}
+        isSessionRunning={this.props.isSessionRunning}
+        isBreakRunning={this.props.isBreakRunning} />
     );
   }
 }
