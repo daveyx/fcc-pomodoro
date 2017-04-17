@@ -44,7 +44,7 @@ export default class Pomodoro extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={8} xsOffset={2}>
+          <Col xs={10} xsOffset={1}>
             <div className="session">
               {this.props.minute} : {this.props.second}<br />
               {this.state.currentCount}
