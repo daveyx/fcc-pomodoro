@@ -18,16 +18,14 @@ export default class SessionLength extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={2} xsOffset={3}>
-            <div>
+          <Col xs={12}>
+            <div className="width-33">
               -
             </div>
-          </Col>
-          <Col xs={3}>
-            {this.props.sessionLength}
-          </Col>
-          <Col xs={2}>
-            <div>
+            <div className="width-33">
+              {this.props.sessionLength}
+            </div>
+            <div className="width-33">
               +
             </div>
           </Col>

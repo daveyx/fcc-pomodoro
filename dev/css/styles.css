@@ -16,3 +16,8 @@ h1 {
   margin-right: auto;
   padding-top: 50px;
 }
+
+.width-33 {
+  width: 33%;
+  float: left;
+}

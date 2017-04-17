@@ -18,16 +18,14 @@ export default class BreakLength extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={2} xsOffset={2}>
-            <div>
+          <Col xs={12}>
+            <div className="width-33">
               -
             </div>
-          </Col>
-          <Col xs={3}>
-            {this.props.breakLength}
-          </Col>
-          <Col xs={2}>
-            <div>
+            <div className="width-33">
+              {this.props.breakLength}
+            </div>
+            <div className="width-33">
               +
             </div>
           </Col>
