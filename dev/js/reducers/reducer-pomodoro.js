@@ -1,8 +1,8 @@
 'use strict';
 
 const initialState = {
-  sessionLength: 1,
-  breakLength: 1,
+  sessionLength: 25,
+  breakLength: 5,
   currentMinute: "1",
   currentSecond: "00",
   isSessionRunning: false,
