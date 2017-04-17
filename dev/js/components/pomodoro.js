@@ -24,8 +24,12 @@ export default class Pomodoro extends Component {
         <Row>
           <Col xs={10} xsOffset={1}>
             <div className="session">
-              {this.props.userInfo}<br />
-              {this.props.minute} : {this.props.second}
+              <p className="user-info">
+                {this.props.userInfo}<br />
+              </p>
+              <p className="timer">
+                {this.props.minute}:{this.props.second}
+              </p>
             </div>
           </Col>
         </Row>
