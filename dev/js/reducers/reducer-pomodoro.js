@@ -42,14 +42,28 @@ export default (state=initialState, action) => {
       });
       break;
     case "INCREMENT_SESSION":
-      return Object.assign({}, state, {
-        sessionLength: state.sessionLength + 1
-      });
+      if ( ! state.isSessionRunning) {
+        return Object.assign({}, state, {
+          sessionLength: state.sessionLength + 1,
+          currentMinute: "" + (state.sessionLength + 1)
+        });
+      } else {
+          return Object.assign({}, state, {
+          sessionLength: state.sessionLength + 1
+        });
+      }
       break;
     case "DECREMENT_SESSION":
-      return Object.assign({}, state, {
-        sessionLength: state.sessionLength <= 1 ? 1 : state.sessionLength - 1
-      });
+      if ( ! state.isSessionRunning) {
+        return Object.assign({}, state, {
+          sessionLength: state.sessionLength <= 1 ? 1 : state.sessionLength - 1,
+          currentMinute: "" + (state.sessionLength <= 1 ? 1 : state.sessionLength - 1)
+        });
+      } else {
+        return Object.assign({}, state, {
+          sessionLength: state.sessionLength <= 1 ? 1 : state.sessionLength - 1
+        });
+      }
       break;
     case "INCREMENT_BREAK":
       return Object.assign({}, state, {

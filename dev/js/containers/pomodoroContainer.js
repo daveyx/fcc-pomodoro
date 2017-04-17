@@ -15,7 +15,10 @@ import {
 class PomodoroContainer extends React.Component {
   constructor(props) {
     super();
-    this.runTimer = this.runTimer.bind(this)
+    this.runTimer = this.runTimer.bind(this);
+    this.stopTimer = this.stopTimer.bind(this);
+    this.state = {
+    };
   }
 
   componentDidMount() {
@@ -43,7 +46,9 @@ class PomodoroContainer extends React.Component {
   }
 
   stopTimer() {
-    clearInterval(this.state.intervalId);
+    if (this.state.intervalId) {
+      clearInterval(this.state.intervalId);
+    }
   }
 
   startTimer() {

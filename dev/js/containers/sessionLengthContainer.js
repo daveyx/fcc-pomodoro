@@ -2,12 +2,21 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import SessionLength from '../components/sessionLength'
+import {bindActionCreators} from 'redux';
+import SessionLength from '../components/sessionLength';
+import {
+  incrementSessionAction,
+  decrementSessionAction
+} from '../actions/index';
 
 class SessionLengthContainer extends React.Component {
   render() {
     return(
-      <SessionLength sessionLength={this.props.sessionLength} />
+      <SessionLength
+        sessionLength={this.props.sessionLength}
+        incrementSession={this.props.incrementSession}
+        decrementSession={this.props.decrementSession}
+      />
     );
   }
 }
@@ -18,4 +27,11 @@ function mapStatesToProps(state) {
   }
 }
 
-export default connect(mapStatesToProps)(SessionLengthContainer);
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    incrementSession: incrementSessionAction,
+    decrementSession: decrementSessionAction
+  }, dispatch)
+}
+
+export default connect(mapStatesToProps, matchDispatchToProps)(SessionLengthContainer);
