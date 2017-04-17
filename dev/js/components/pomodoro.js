@@ -3,8 +3,7 @@
 import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
 import BreakLengthContainer from '../containers/breakLengthContainer';
-// import SessionLengthContainer from '../containers/sessionLengthContainer';
-import SessionLength from './sessionLength';
+import SessionLengthContainer from '../containers/sessionLengthContainer';
 
 export default class Pomodoro extends Component {
   constructor(props) {
@@ -41,7 +40,7 @@ export default class Pomodoro extends Component {
             <BreakLengthContainer />
           </Col>
           <Col xs={6} xsOffset={0}>
-            <SessionLength />
+            <SessionLengthContainer />
           </Col>
         </Row>
         <Row>

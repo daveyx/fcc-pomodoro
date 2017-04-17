@@ -24,7 +24,7 @@ export default class SessionLength extends Component {
             </div>
           </Col>
           <Col xs={3}>
-            X
+            {this.props.sessionLength}
           </Col>
           <Col xs={2}>
             <div>
