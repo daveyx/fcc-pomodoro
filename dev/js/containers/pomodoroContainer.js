@@ -4,7 +4,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Pomodoro from '../components/pomodoro';
-import {decrementTimerAction, startPomodoroAction} from '../actions/index';
+import {decrementTimerAction, startPomodoroAction, pausePomodoroAction} from '../actions/index';
 
 class PomodoroContainer extends React.Component {
   constructor(props) {
@@ -23,8 +23,11 @@ class PomodoroContainer extends React.Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
+    if (nextProps.isPaused) {
+      this.stopTimer();
+    }
     if (this.props.isSessionRunning !== nextProps.isSessionRunning) {
-      if (nextProps.isSessionRunning ) {
+      if (nextProps.isSessionRunning && ! nextProps.isPaused) {
         this.startTimer();
       }
     }
@@ -50,6 +53,7 @@ class PomodoroContainer extends React.Component {
         second={this.props.second}
         userInfo={this.props.userInfo}
         startClickHandler={this.props.startPomodoro}
+        pauseClickHandler={this.props.pausePomodoro}
         isSessionRunning={this.props.isSessionRunning}
         isBreakRunning={this.props.isBreakRunning} />
     );
@@ -62,6 +66,7 @@ function mapStatesToProps(state) {
     second: state.pomodoroState.currentSecond,
     isSessionRunning: state.pomodoroState.isSessionRunning,
     isBreakRunning: state.pomodoroState.isBreakRunning,
+    isPaused: state.pomodoroState.isPaused,
     userInfo: state.pomodoroState.userInfo
   }
 }
@@ -69,7 +74,8 @@ function mapStatesToProps(state) {
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
     decrementTimer: decrementTimerAction,
-    startPomodoro: startPomodoroAction
+    startPomodoro: startPomodoroAction,
+    pausePomodoro: pausePomodoroAction
   }, dispatch)
 }
 

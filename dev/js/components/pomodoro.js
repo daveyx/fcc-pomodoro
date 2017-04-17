@@ -18,6 +18,20 @@ export default class Pomodoro extends Component {
     }
   }
 
+  getButton1Config() {
+    if ( ! this.props.isSessionRunning && ! this.props.isBreakRunning) {
+      return {
+        text: "Start",
+        handler: this.props.startClickHandler
+      };
+    } else {
+      return {
+        text: "Pause",
+        handler: this.props.pauseClickHandler
+      };
+    }
+  }
+
   getButton2Text() {
     if ( this.props.isSessionRunning || this.props.isBreakRunning) {
       return "Reset";
@@ -25,6 +39,7 @@ export default class Pomodoro extends Component {
   }
 
   render() {
+    let button1Config = this.getButton1Config();
     let button2Text = this.getButton2Text();
     return(
       <div className="wrapper text-center">
@@ -47,7 +62,7 @@ export default class Pomodoro extends Component {
               </p>
             </div>
             <div className="buttons">
-              <div className="button" onClick={this.props.startClickHandler}>{this.getButton1Text()}</div>
+              <div className="button" onClick={button1Config.handler}>{button1Config.text}</div>
               {button2Text ?
                 <div className="button" onClick={this.props.startClickHandler}>{button2Text}</div>
                 : null}
