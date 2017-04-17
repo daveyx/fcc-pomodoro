@@ -27,6 +27,9 @@ export default (state=initialState, action) => {
       });
       break;
     case "RESUME_POMODORO":
+      return Object.assign({}, state, {
+        isPaused: false
+      });
       break;
     case "RESET_POMODORO":
       break;

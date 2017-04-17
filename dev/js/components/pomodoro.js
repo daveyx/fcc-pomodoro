@@ -25,10 +25,17 @@ export default class Pomodoro extends Component {
         handler: this.props.startClickHandler
       };
     } else {
-      return {
-        text: "Pause",
-        handler: this.props.pauseClickHandler
-      };
+      if (this.props.isPaused) {
+        return {
+          text: "Resume",
+          handler: this.props.resumeClickHandler
+        };
+      } else {
+        return {
+          text: "Pause",
+          handler: this.props.pauseClickHandler
+        };
+      }
     }
   }
 
