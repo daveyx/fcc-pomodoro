@@ -47,7 +47,7 @@ function decrementTimer(state) {
     });
   } else {
     return Object.assign({}, state, {
-      currentSecond: Number(state.currentSecond) - 1
+      currentSecond: Number(state.currentSecond) <= 10 ? "0" + (Number(state.currentSecond) - 1) : "" + (Number(state.currentSecond) - 1)
     });
   }
 }
