@@ -3,7 +3,7 @@
 const initialState = {
   sessionLength: 25,
   breakLength: 5,
-  currentMinute: "1",
+  currentMinute: "25",
   currentSecond: "00",
   isSessionRunning: false,
   isBreakRunning: false,
