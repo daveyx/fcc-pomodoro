@@ -24,7 +24,7 @@ export default class App extends Component {
           <Row>
             <Col xs={10} xsOffset={1}>
               <h1 className="text-center">
-                Pomodoro<br />
+                Pomodoro Clock<br />
                 <small>by <a href="http://www.daveyx.ga" target="_blank" title="daveyx">daveyx</a></small>
               </h1>
             </Col>
