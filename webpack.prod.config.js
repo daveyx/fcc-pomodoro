@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devServer: {
@@ -24,7 +25,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'src'),
     filename: 'js/bundle.[hash].js',
-    chunkFilename: 'js/bundle.[hash].js'
+    publicPath: '/'
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -35,6 +36,9 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin(), //minify everything
-    new webpack.optimize.AggressiveMergingPlugin()//Merge chunks
+    new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks
+    new HtmlWebpackPlugin({
+        template: 'dev/index.html'
+    })
   ]
 };
