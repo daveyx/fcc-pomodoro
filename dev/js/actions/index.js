@@ -1,45 +1,49 @@
+'use strict';
+
+import * as types from '../../constants/actionTypes';
+
 export const decrementTimerAction = () => {
   return {
-    type: "DECREMENT_TIMER"
+    type: types.DECREMENT_TIMER
   }
 };
 export const startPomodoroAction = () => {
   return {
-    type: "START_POMODORO"
+    type: types.START_POMODORO
   }
 };
 export const pausePomodoroAction = () => {
   return {
-    type: "PAUSE_POMODORO"
+    type: types.PAUSE_POMODORO
   }
 };
 export const resumePomodoroAction = () => {
   return {
-    type: "RESUME_POMODORO"
+    type: types.RESUME_POMODORO
   }
 };
 export const resetPomodoroAction = () => {
   return {
-    type: "RESET_POMODORO"
+    type: types.RESET_POMODORO
   }
 };
 export const incrementSessionAction = () => {
   return {
-    type: "INCREMENT_SESSION"
+    type: types.INCREMENT_SESSION
   }
 };
 export const decrementSessionAction = () => {
   return {
-    type: "DECREMENT_SESSION"
+    type: types.DECREMENT_SESSION
   }
 };
 export const incrementBreakAction = () => {
   return {
-    type: "INCREMENT_BREAK"
+    type: types.INCREMENT_BREAK
   }
 };
 export const decrementBreakAction = () => {
   return {
-    type: "DECREMENT_BREAK"
+    type: types.DECREMENT_BREAK
   }
 };

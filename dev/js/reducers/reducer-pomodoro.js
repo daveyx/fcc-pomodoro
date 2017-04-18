@@ -1,5 +1,7 @@
 'use strict';
 
+import * as types from '../../constants/actionTypes';
+
 const initialState = {
   sessionLength: 25,
   breakLength: 5,
@@ -13,23 +15,27 @@ const initialState = {
 
 export default (state=initialState, action) => {
   switch(action.type) {
-    case "DECREMENT_TIMER":
+    case types.DECREMENT_TIMER: {
       return decrementTimer(state);
       break;
-    case "START_POMODORO":
+    }
+    case types.START_POMODORO: {
       return {...state, isSessionRunning: true};
       break;
-    case "PAUSE_POMODORO":
+    }
+    case types.PAUSE_POMODORO: {
       return Object.assign({}, state, {
         isPaused: true
       });
       break;
-    case "RESUME_POMODORO":
+    }
+    case types.RESUME_POMODORO: {
       return Object.assign({}, state, {
         isPaused: false
       });
       break;
-    case "RESET_POMODORO":
+    }
+    case types.RESET_POMODORO: {
       return Object.assign({}, state, {
         isPaused: false,
         isSessionRunning: false,
@@ -39,7 +45,8 @@ export default (state=initialState, action) => {
         currentSecond: "00"
       });
       break;
-    case "INCREMENT_SESSION":
+    }
+    case types.INCREMENT_SESSION: {
       if ( ! state.isSessionRunning) {
         return Object.assign({}, state, {
           sessionLength: state.sessionLength + 1,
@@ -51,7 +58,8 @@ export default (state=initialState, action) => {
         });
       }
       break;
-    case "DECREMENT_SESSION":
+    }
+    case types.DECREMENT_SESSION: {
       if ( ! state.isSessionRunning) {
         return Object.assign({}, state, {
           sessionLength: state.sessionLength <= 1 ? 1 : state.sessionLength - 1,
@@ -63,16 +71,19 @@ export default (state=initialState, action) => {
         });
       }
       break;
-    case "INCREMENT_BREAK":
+    }
+    case types.INCREMENT_BREAK: {
       return Object.assign({}, state, {
         breakLength: state.breakLength + 1
       });
       break;
-    case "DECREMENT_BREAK":
+    }
+    case types.DECREMENT_BREAK: {
       return Object.assign({}, state, {
         breakLength: state.breakLength <= 1 ? 1 : state.breakLength - 1
       });
       break;
+    }
   }
   return state;
 }
