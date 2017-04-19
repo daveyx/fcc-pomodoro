@@ -4,10 +4,6 @@ h1 {
   line-height: 0.8 !important;
 }
 
-/*div[class^="col-"] {
-  border: 1px solid black;
-}*/
-
 .session {
   height: 200px;
   width: 200px;
