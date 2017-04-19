@@ -39,7 +39,7 @@ export default class App extends Component {
                 <hr />
                 <footer className="text-center">
                   Sourcecode at github.com: <a href="https://github.com/daveyx/fcc-pomodoro" title="Sourcecode" target="_blank">click</a><br />
-                Demo at github.com: <a href="https://daveyx.github.io/fcc-pomodoro/" title="Demo" target="_blank">click</a>
+                  Demo at github.com: <a href="https://daveyx.github.io/fcc-pomodoro/" title="Demo" target="_blank">click</a>
                 </footer>
               </Col>
             </Row>
