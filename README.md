@@ -6,16 +6,5 @@
                            |___/      
     -----------------------------------
 
-# pomodoro clock with react & redux
-https://www.freecodecamp.com/challenges/build-a-pomodoro-clock
-
-### live demo
-https://daveyx.github.io/fcc-pomodoro
-
-### install
-1. git clone https://github.com/daveyx/fcc-pomodoro
-2. cd fcc-pomodoro
-3. npm install
-4. npm start
-5. call http://localhost:3000 in your browser
-6. enjoy...
+    # END OF LIFE
+    This repo is not used anymore and has moved to https://github.com/daveyx/freecodecamp/tree/master/src/frontend/08_pomodoro
